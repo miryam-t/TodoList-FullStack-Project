@@ -1,5 +1,5 @@
 using Microsoft.EntityFrameworkCore;
-using TodoApi; // ודאי שזה השם של ה-Namespace שלך
+using TodoApi; 
 
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddEndpointsApiExplorer();
@@ -22,7 +22,6 @@ app.UseCors("AllowAll");
 app.MapGet("/items", async (ToDoDbContext db) =>
 await db.Items.ToListAsync());
 
-// app.MapGet("/", () => "Hello World!");
 // 2. הוספת משימה חדשה (POST):
 app.MapPost("/items", async (ToDoDbContext db, Item newItem) => {
 db.Items.Add(newItem);
@@ -31,13 +30,6 @@ return Results.Created($"/items/{newItem.Id}", newItem);
 });
 
 // 3. עדכון משימה (PUT):
-// app.MapPut("/items/{id}", async (ToDoDbContext db, int id, Item inputItem) => {
-// var item = await db.Items.FindAsync(id);
-// if (item is null)
-
-//  return Results.NotFound();
-
-// });
 app.MapPut("/items/{id}", async (ToDoDbContext db, int id, Item inputItem) => {
 var item = await db.Items.FindAsync(id);
 if (item is null) return Results.NotFound();
@@ -46,12 +38,8 @@ item.IsComplete = inputItem.IsComplete;
 await db.SaveChangesAsync();
 return Results.NoContent();
 });
-// 4. מחיקת משימה (DELETE):
-// app.MapDelete("/items/{id}", async (ToDoDbContext db, int id) => {
-// var item = await db.Items.FindAsync(id);
-// if (item is null) return Results.NotFound();
 
-// });
+// 4. מחיקת משימה (DELETE):
 app.MapDelete("/items/{id}", async (ToDoDbContext db, int id) => {
 // 1. חיפוש המשימה לפי ה-ID שהתקבל בכתובת
 var item = await db.Items.FindAsync(id);
