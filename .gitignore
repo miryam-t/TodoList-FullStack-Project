@@ -10,3 +10,5 @@ build/
 # IDE settings
 .vs/
 .vscode/
+
+appsettings.json
