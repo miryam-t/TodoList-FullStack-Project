@@ -1,21 +1,16 @@
-## ToDo List Fullstack App
-פרויקט ניהול משימות מקצה לקצה (Fullstack) המבוסס על Minimal API בצד השרת, React בצד הלקוח, ו-MySQL כמסד נתונים.
+# ToDo List Fullstack App
+**פרויקט ניהול משימות מקצה לקצה (Fullstack)** המבוסס על **Minimal API** בצד השרת, **React** בצד הלקוח, ו-**MySQL** כמסד נתונים.
 
-תיאור הפרויקט
-הפרויקט נבנה כחלק מתהליך למידה של ארכיטקטורת Microservices ושירותים רזים. האפליקציה מאפשרת למשתמשים להירשם, להתחבר ולנהל רשימת משימות אישית בצורה מאובטחת.
+### תיאור הפרויקט
+הפרויקט נבנה כחלק מתהליך למידה של ארכיטקטורת **Microservices** ושירותים רזים.
 
-טכנולוגיות וכלים
-Backend: .NET 8.0 Minimal API
-
-Frontend: React (Axios)
-
-Database: MySQL & Entity Framework Core
-
-Security: JWT Authentication
-
-IDE: Visual Studio Code
-
-CLI: Dotnet CLI
+### טכנולוגיות וכלים
+* **Backend:** .NET 8.0 Minimal API
+* **Frontend:** React (Axios)
+* **Database:** MySQL & Entity Framework Core
+* **Security:** JWT Authentication
+* **IDE**: Visual Studio Code
+* **CLI**: Dotnet CLI
 
 צד השרת - #Minimal API
 למה Minimal API?
