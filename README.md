@@ -1,7 +1,6 @@
 # ToDo List Fullstack App
-## **פרויקט ניהול משימות מקצה לקצה (Fullstack)** המבוסס על **Minimal API** בצד השרת, **React** בצד הלקוח, ו-**MySQL** כמסד נתונים.
-
 ### תיאור הפרויקט
+## **פרויקט ניהול משימות מקצה לקצה (Fullstack)** המבוסס על **Minimal API** בצד השרת, **React** בצד הלקוח, ו-**MySQL** כמסד נתונים.
 הפרויקט נבנה כחלק מתהליך למידה של ארכיטקטורת **Microservices** ושירותים רזים.
 
 ### טכנולוגיות וכלים
@@ -25,12 +24,13 @@
 הרצה במצב מעקב: dotnet watch run
 
 ### התחברות למסד הנתונים (DB First)
+<div dir="rtl">
 עבודה מול **MySQL Workbench** ושימוש ב-**Entity Framework Core**:
 
 * **התקנת חבילות:** EntityFrameworkCore, Pomelo.EntityFrameworkCore.MySql, Design, Tools.
 
 * **פקודת Scaffold:** ליצירת ה-Models וה-DbContext באופן אוטומטי מהטבלאות הקיימות.
-
+</div>
 **מיפוי נתיבים (Routes Mapping)**
 מימוש פעולות CRUD בסיסיות ישירות מול ה-Context:
 
@@ -43,21 +43,22 @@
 * DELETE /items/{id} - מחיקת משימה.
 
 ### צד הלקוח - React & Axios
+<div dir="rtl">
 הקליינט מתקשר עם ה-API באמצעות ספריית **Axios**.
 
 * **CORS**: הוגדרה פוליסת הרשאה בשרת המאפשרת לקליינט לבצע קריאות.
 
 * **Interceptors**:
 
-* מימוש Interceptor לתפיסת שגיאות ב-Response ורישום ללוג.
+        מימוש Interceptor לתפיסת שגיאות ב-Response ורישום ללוג.
 
-* מימוש Interceptor לזיהוי שגיאת **401 (Unauthorized)** והפניה אוטומטית לדף ההתחברות.
+        מימוש Interceptor לזיהוי שגיאת **401 (Unauthorized)** והפניה אוטומטית לדף ההתחברות.
 
 * **Defaults**: הגדרת baseURL כברירת מחדל לכל הקריאות.
-
+</div>
 ### אבטחה והזדהות - JWT
 בפרויקט הוטמע מנגנון אבטחה מתקדם:
-
+<div dir="rtl">
 **1. טבלת Users**: הוספת ישות משתמש עם מזהה, שם וסיסמה.
 
 **2. JWT Authentication**:הוספת שירותי אימות ב-API והנפקת **Token מאובטח** בנתיב ה-login.
@@ -65,16 +66,15 @@
 הגנה על נתיבי המשימות באמצעות RequireAuthorization.
 
 **3. הפרדת נתונים**: עדכון ה-Routes כך שכל משתמש יוכל לראות ולנהל **רק את המשימות המשויכות ל-ID שלו**.
-
+</div>
 ### דרישות קדם והרצה
+<div dir="rtl">
 1. התקנת **MySQL** ו-**Workbench**.
-
 2. התקנת **.NET SDK**.
-
 3. הגדרת Connection String בקובץ appsettings.json.
 
 הרצת השרת: dotnet run.
 הרצת הקליינט: npm i ולאחר מכן npm start.
-
+</div>
 **פותח כחלק מפרויקט לימודי ב-Net**.
 **פותח כחלק מקורס פרקטיקוד-פרויקט 3**.
