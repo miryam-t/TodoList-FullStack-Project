@@ -24,13 +24,13 @@
 הרצה במצב מעקב: dotnet watch run
 
 ### התחברות למסד הנתונים (DB First)
-<div dir="rtl">
+
 עבודה מול **MySQL Workbench** ושימוש ב-**Entity Framework Core**:
 
 * **התקנת חבילות:** EntityFrameworkCore, Pomelo.EntityFrameworkCore.MySql, Design, Tools.
 
 * **פקודת Scaffold:** ליצירת ה-Models וה-DbContext באופן אוטומטי מהטבלאות הקיימות.
-</div>
+
 **מיפוי נתיבים (Routes Mapping)**
 מימוש פעולות CRUD בסיסיות ישירות מול ה-Context:
 
@@ -60,7 +60,7 @@
 
 **1. טבלת Users**: הוספת ישות משתמש עם מזהה, שם וסיסמה.
 
-**2. JWT Authentication**:הוספת שירותי אימות ב-API והנפקת **Token מאובטח** בנתיב ה-login.
+                                                               **2. JWT Authentication**:הוספת שירותי אימות ב-API והנפקת **Token מאובטח** בנתיב ה-login.
 
 הגנה על נתיבי המשימות באמצעות RequireAuthorization.
 
@@ -73,7 +73,9 @@
 3. הגדרת Connection String בקובץ appsettings.json.
 
 הרצת השרת: dotnet run.
+
 הרצת הקליינט: npm i ולאחר מכן npm start.
-</div>
+
 **פותח כחלק מפרויקט לימודי ב-Net**.
 **פותח כחלק מקורס פרקטיקוד-פרויקט 3**.
+</div>
