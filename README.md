@@ -50,15 +50,14 @@
 
 * **Interceptors**:
 
-        מימוש Interceptor לתפיסת שגיאות ב-Response ורישום ללוג.
-
-        מימוש Interceptor לזיהוי שגיאת **401 (Unauthorized)** והפניה אוטומטית לדף ההתחברות.
+  מימוש Interceptor לתפיסת שגיאות ב-Response ורישום ללוג.
+  מימוש Interceptor לזיהוי שגיאת **401 (Unauthorized)** והפניה אוטומטית לדף ההתחברות.
 
 * **Defaults**: הגדרת baseURL כברירת מחדל לכל הקריאות.
-</div>
+
 ### אבטחה והזדהות - JWT
 בפרויקט הוטמע מנגנון אבטחה מתקדם:
-<div dir="rtl">
+
 **1. טבלת Users**: הוספת ישות משתמש עם מזהה, שם וסיסמה.
 
 **2. JWT Authentication**:הוספת שירותי אימות ב-API והנפקת **Token מאובטח** בנתיב ה-login.
@@ -66,9 +65,9 @@
 הגנה על נתיבי המשימות באמצעות RequireAuthorization.
 
 **3. הפרדת נתונים**: עדכון ה-Routes כך שכל משתמש יוכל לראות ולנהל **רק את המשימות המשויכות ל-ID שלו**.
-</div>
+
 ### דרישות קדם והרצה
-<div dir="rtl">
+
 1. התקנת **MySQL** ו-**Workbench**.
 2. התקנת **.NET SDK**.
 3. הגדרת Connection String בקובץ appsettings.json.
