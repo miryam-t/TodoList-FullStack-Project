@@ -1,10 +1,14 @@
 import axios from 'axios';
 
 // 1. הגדרת כתובת ה-API כברירת מחדל
-axios.defaults.baseURL = process.env.REACT_APP_API_URL;
+// axios.defaults.baseURL = process.env.REACT_APP_API_URL;
+// יצירת מופע ספציפי עם הכתובת מה-env
+const apiClient = axios.create({
+    baseURL: process.env.REACT_APP_API_URL,
+});
 
 // 2. Interceptor לבקשות (Request): הוספת הטוקן לכל בקשה שיוצאת
-axios.interceptors.request.use(config => {
+apiClient.interceptors.request.use(config => {
     const token = localStorage.getItem('token');
     if (token) {
         config.headers.Authorization = 'Bearer ' + token;
@@ -15,7 +19,7 @@ axios.interceptors.request.use(config => {
 });
 
 // 3. Interceptor לתגובות (Response): תפיסת שגיאה 401 והעברה ללוגין
-axios.interceptors.response.use(
+apiClient.interceptors.response.use(
     response => response,
     error => {
         if (error.response && error.response.status === 401) {
@@ -32,19 +36,19 @@ const service = {
 
     // --- פונקציות חדשות לאימות ---
     login: async (Username, password) => {
-        const result = await axios.post('/login', { Username, password });
+        const result = await apiClient.post('/login', { Username, password });
         // שמירת הטוקן שחזר מהשרת
         localStorage.setItem('token', result.data.token);
         return result.data;
     },
 
     register: async (Username, password) => {
-        const result = await axios.post('/register', { Username, password });
+        const result = await apiClient.post('/register', { Username, password });
         return result.data;
     },
     // שליפת כל המשימות
     getTasks: async () => {
-        const result = await axios.get('/items');
+        const result = await apiClient.get('/items');
 
         return result.data;
     },
@@ -52,7 +56,7 @@ const service = {
     // הוספת משימה חדשה
     addTask: async (taskName) => {
         console.log('addTask', taskName);
-        const result = await axios.post('/items', {
+        const result = await apiClient.post('/items', {
             name: taskName,
             isComplete: false
         });
@@ -62,7 +66,7 @@ const service = {
     // עדכון משימה (כולל שליחת ה-ID והשם כדי שהנתונים לא יימחקו ב-Database)
     setCompleted: async (id, taskName, isComplete) => {
         console.log('setCompleted', { id, taskName, isComplete });
-        const result = await axios.put('/items/' + id, {
+        const result = await apiClient.put('/items/' + id, {
             id: id,
             name: taskName,
             isComplete: isComplete
@@ -73,7 +77,7 @@ const service = {
     // מחיקת משימה לפי ID
     deleteTask: async (id) => {
         console.log('deleteTask', id);
-        await axios.delete('/items/' + id);
+        await apiClient.delete('/items/' + id);
         return { success: true };
     }
 };
