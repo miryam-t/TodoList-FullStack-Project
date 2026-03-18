@@ -42,12 +42,13 @@ builder.Services.AddAuthorization(); // הוספת שירותי הרשאות
  // --- 2. בניית האפליקציה (Build) ---
 var app = builder.Build();
 // --- 3. הגדרות התנהגות (Middleware) ---
+app.UseCors("AllowAll");
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
     app.UseSwaggerUI();
 }
-app.UseCors("AllowAll");
+
 app.UseAuthentication(); // הזדהות - מי אתה?
 app.UseAuthorization();  // הרשאות - מה מותר לך לעשות?
 // פונקציית עזר לחילוץ ה-ID של המשתמש מהטוקן
