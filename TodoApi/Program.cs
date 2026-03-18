@@ -16,7 +16,10 @@ builder.Services.AddDbContext<ToDoDbContext>();
 // הגדרת CORS - מאפשר ל-React לתקשר עם השרת
 builder.Services.AddCors(options =>
 {
-options.AddPolicy("AllowAll", b => b.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader());
+options.AddPolicy("AllowAll", b => 
+b.AllowAnyOrigin()
+.AllowAnyMethod()
+.AllowAnyHeader());
 });
 
 // הגדרת אימות (JWT Authentication)
